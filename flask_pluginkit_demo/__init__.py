@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    Flask-PluginKit.example.plugins.example
-    ~~~~~~~~~~~~~~
+    Flask-PluginKit-Demo
+    ~~~~~~~~~~~~~~~~~~~~~
 
     This is a demo for plugin.
     Your Plugin Description.

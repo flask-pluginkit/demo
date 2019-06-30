@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import re
 import ast
 from setuptools import setup
-from flask_pluginkit_demo import __version__, __author__, __license__, __description__
 
 def _get_meta(meta):
     """当插件不可以直接引入时，可以通过此函数获取元数据。
@@ -11,25 +12,26 @@ def _get_meta(meta):
     description = _get_meta("description")
     """
     pat = re.compile(r'__%s__\s+=\s+(.*)' % meta)
-    with open('flask_pluginkit_ssoclient/__init__.py', 'rb') as fh:
+    with open('flask_pluginkit_demo/__init__.py', 'rb') as fh:
         meta_str = ast.literal_eval(pat.search(fh.read().decode('utf-8')).group(1))
     return str(meta_str)
 
 def _get_author():
     mail_re = re.compile(r'(.*)\s<(.*)>')
-    return (mail_re.search(__author__).group(1), mail_re.search(__author__).group(2))
+    author_email = _get_meta("author")
+    return (mail_re.search(author_email).group(1), mail_re.search(author_email).group(2))
 
 (author, email) = _get_author()
 setup(
     name='flask_pluginkit_demo',
-    version=__version__,
-    license=__license__,
+    version=_get_meta("version"),
+    license=_get_meta("license"),
     author=author,
     author_email=email,
     url='https://github.com/flask-pluginkit/demo',
     download_url="https://github.com/flask-pluginkit/demo",
     keywords="flask-pluginkit",
-    description=__description__,
+    description=_get_meta("description"),
     packages=['flask_pluginkit_demo',],
     zip_safe=False,
     include_package_data=True,
