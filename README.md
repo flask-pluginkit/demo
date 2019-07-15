@@ -1,6 +1,7 @@
 # demo
-用以参考的第三方插件示例
 
-### 安装
+A third-party plugin example based on [Flask-PluginKit](https://github.com/staugur/Flask-PluginKit) for reference only.
+
+### Installation
 
 `pip install git+https://github.com/flask-pluginkit/demo@master`

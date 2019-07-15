@@ -5,7 +5,8 @@ import ast
 from setuptools import setup
 
 def _get_meta(meta):
-    """当插件不可以直接引入时，可以通过此函数获取元数据。
+    """Metadata can be obtained by this function
+    when the plugin cannot be imported directly.
 
     version = _get_meta("version")
     license = _get_meta("license")
@@ -23,7 +24,7 @@ def _get_author():
 
 (author, email) = _get_author()
 setup(
-    name='flask_pluginkit_demo',
+    name='flask-pluginkit-demo',
     version=_get_meta("version"),
     license=_get_meta("license"),
     author=author,
@@ -36,8 +37,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=[
-        'Flask-PluginKit>=2.2.0',
-        'Flask-RESTful'
+        'Flask-PluginKit>=3.0.0'
     ],
     classifiers=[
         'Environment :: Web Environment',
