@@ -10,10 +10,11 @@
     :license: BSD, see LICENSE for more details.
 """
 
+from os.path import dirname, abspath
 from flask import Blueprint, make_response, jsonify, request
 
 
-plugin_blueprint = Blueprint("demo", "demo", static_folder='static')
+plugin_blueprint = Blueprint("demo", "demo", static_folder='static', root_path=dirname(abspath(__file__)))
 @plugin_blueprint.route("/")
 def index():
     return "third plugin demo"
