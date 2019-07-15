@@ -49,7 +49,7 @@ __state__ = "enabled"
 
 def register():
     return {
-        "tep": {"html": "demo/demo.html", "code": "plugndemo html code"},
+        "tep": {"html": "demo/demo.html", "code": "<p>hello third-demo(from html code)</p>"},
         "hep": {
             "after_request": lambda *args, **kwargs: len(args) + len(kwargs),
             "before_request": api_limit
