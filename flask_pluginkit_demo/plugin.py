@@ -26,4 +26,4 @@ def api_limit():
     response = make_response(jsonify(msg="RateLimiter", ip=ip), 429)
     #: Remove the comment from the next line and intercept the request
     #response.is_return = True
-    return response
+    return None
